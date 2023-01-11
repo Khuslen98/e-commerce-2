@@ -2,6 +2,9 @@ import CarouselData from "../data/carousel1";
 import AliceCarousel from 'react-alice-carousel';
 
 const CarouselData0 = () => {
+    const responsive = {
+        0 : {items: 1 , itemFit: 'contain'}
+    }
     const result = CarouselData.map(data => {
 
         return (
@@ -22,7 +25,7 @@ const CarouselData0 = () => {
     console.log(result)
     return (
         <div>
-            <AliceCarousel infinite="false" autoPlay autoPlayInterval={3000}>
+            <AliceCarousel responsive={responsive} infinite="false" autoPlay autoPlayInterval={3000}>
                 {result}
             </AliceCarousel>
         </div>

@@ -1,6 +1,6 @@
 import './App.css';
 
-import AliceCarousel from 'react-alice-carousel';
+// import AliceCarousel from 'react-alice-carousel';
 import './components/CustomerService';
 import CustomerService from './components/CustomerService';
 import Navbar1 from './components/Navbar1';
@@ -29,9 +29,7 @@ function App() {
           </div>
         </nav>
         <CarouselData0 />
-      </div>
-      <div>
-        {/* <SlideCarousel /> */}
+        <SlideCarousel />
       </div>
     </div >
   );

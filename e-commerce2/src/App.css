@@ -25,12 +25,12 @@
 .CarouselDataH2 {
   color: #1B5A7D;
 }
-.carouselMain {
+/* .carouselMain {
   width: 1440px;
   padding-left: 174px;
   padding-right: 174px;
   height: 393px;
-}
+} */
 .carouselSection1 {
   padding: 67px 0 117px 0;
 }
@@ -57,6 +57,15 @@
   height: 25rem;
   border-radius: 5%;
   margin-left: 14rem;;
+}
+.SlideCarousel {
+  color: #1B5A7D;
+  border: #3A3A3A solid 2px;
+  border-radius: 10px;
+}
+.SlideCarousel01 {
+  flex-direction: column;
+  justify-content: center;
 }
 /* .Carousel01 {
 
