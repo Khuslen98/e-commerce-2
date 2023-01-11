@@ -9,6 +9,9 @@ import MainMenu from './components/MainMenu';
 import CarouselData0 from './components/Carousel';
 import CustomerService1 from './components/CustomerService1';
 import SlideCarousel from './components/SlideCarousel';
+import TwoRowCarousel from './components/TwoRowCarousel';
+import TwoRowCarousel0 from './components/TwoRowCarousel0';
+
 
 function App() {
   return (
@@ -30,6 +33,8 @@ function App() {
         </nav>
         <CarouselData0 />
         <SlideCarousel />
+        <TwoRowCarousel0/>
+        <TwoRowCarousel />
       </div>
     </div >
   );

@@ -67,6 +67,10 @@
   flex-direction: column;
   justify-content: center;
 }
+.TwoRowHead {
+  display: flex;
+  justify-content: space-between;
+}
 /* .Carousel01 {
 
 } */

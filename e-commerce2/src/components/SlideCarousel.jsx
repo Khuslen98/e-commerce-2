@@ -8,7 +8,7 @@ export default function SlideCarousel() {
         return (
             <div className="d-flex mx-5 mt-5 SlideCarousel">
                 <div className="m-1">
-                    <img src={element.image} alt="" style={{width: "22rem", heigth: "22rem"}}/>
+                    <img src={element.image} className="rounded" alt="" style={{width: "16rem", heigth: "16rem"}}/>
                 </div>
                 <div className="m-3 d-flex  align-items-center SlideCarousel01">
                     <h4>{element.name}</h4>
@@ -45,7 +45,7 @@ export default function SlideCarousel() {
             swipeable={false}
             draggable={false}
             showDots={true}
-            ssr={true} // means to render carousel on server-side.
+            ssr={true} 
             infinite={true}
             responsive={responsive}
             autoPlaySpeed={1000}
