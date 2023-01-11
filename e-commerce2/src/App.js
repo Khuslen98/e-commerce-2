@@ -1,6 +1,6 @@
 import './App.css';
 
-import AliceCarousel from 'react-alice-carousel';
+// import AliceCarousel from 'react-alice-carousel';
 import './components/CustomerService';
 import CustomerService from './components/CustomerService';
 import Navbar1 from './components/Navbar1';
@@ -9,6 +9,9 @@ import MainMenu from './components/MainMenu';
 import CarouselData0 from './components/Carousel';
 import CustomerService1 from './components/CustomerService1';
 import SlideCarousel from './components/SlideCarousel';
+import TwoRowCarousel from './components/TwoRowCarousel';
+import TwoRowCarousel0 from './components/TwoRowCarousel0';
+
 
 function App() {
   return (
@@ -29,9 +32,9 @@ function App() {
           </div>
         </nav>
         <CarouselData0 />
-      </div>
-      <div>
-        {/* <SlideCarousel /> */}
+        <SlideCarousel />
+        <TwoRowCarousel0/>
+        <TwoRowCarousel />
       </div>
     </div >
   );
