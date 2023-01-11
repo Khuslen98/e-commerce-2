@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.navBar1 {
+  background-color:  #003F62;
+  color: #F4F4F4;
+}
+.btn1 {
+  margin-left: -30px;
+}
+.category {
+  margin-left: 4rem;
+  background-color:#F4F4F4;
+}
+.navBar2 {
+  background-color: #F4F4F4;
+}
+.fundReturn {
+  color: #3A3A3A;
+  margin-top: 10px;
+  margin-right: 30px;
+}
+.CarouselDataH2 {
+  color: #1B5A7D;
+}
+/* .carouselMain {
+  width: 1440px;
+  padding-left: 174px;
+  padding-right: 174px;
+  height: 393px;
+} */
+.carouselSection1 {
+  padding: 67px 0 117px 0;
+}
+.CarouselDataH2 {
+  font-weight: bolder;
+  font-size: 43px;
+}
+.btn2 {
+  padding: 18.5px 35px 18.5px 35px;
+  text-align: center;
+  border-radius: 20px;
+  margin-top: 37px;
+}
+.CarouselDataBTN1 {
+  background-color: #EDA415;
+  color: white ;
+}
+/* .carouselSection2 {
+  position: relative;
+} */
+.CarouselDataIMG {
+  
+  width: 40rem;
+  height: 25rem;
+  border-radius: 5%;
+  margin-left: 14rem;;
+}
+.SlideCarousel {
+  color: #1B5A7D;
+  border: #3A3A3A solid 2px;
+  border-radius: 10px;
+}
+.SlideCarousel01 {
+  flex-direction: column;
+  justify-content: center;
+}
+/* .Carousel01 {
+
+} */
+/* .CarouselDataPARA {
+  position: absolute;
+  margin-bottom: 50px;
+  border: #EDA415 solid 20px;
+  background-color: #EDA415;
+  border-radius: 50%;
+} */
