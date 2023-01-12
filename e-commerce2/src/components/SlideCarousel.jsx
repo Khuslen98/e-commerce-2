@@ -6,11 +6,11 @@ import "react-multi-carousel/lib/styles.css";
 export default function SlideCarousel() {
     const data1 = slideCarousel.map(element => {
         return (
-            <div className="d-flex mx-5 mt-5 SlideCarousel">
+            <div className="d-flex mx-5 mt-5 SlideCarousel align-items-center">
                 <div className="m-1">
-                    <img src={element.image} className="rounded" alt="" style={{width: "16rem", heigth: "16rem"}}/>
+                    <img src={element.image} className="rounded img-fluid" alt="" style={{width: "16rem", heigth: "16rem"}}/>
                 </div>
-                <div className="m-3 d-flex  align-items-center SlideCarousel01">
+                <div className="m-3 align-items-center SlideCarousel01">
                     <h4>{element.name}</h4>
                     {element.para}
                 </div>
