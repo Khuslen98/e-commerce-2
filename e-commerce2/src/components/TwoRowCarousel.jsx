@@ -1,60 +1,70 @@
 import twoRowCarousel from "../data/twoRowCarousel";
 import React from "react";
-import Slider from "react-slick"
+// import Slider from "react-slick"
+import AliceCarousel from 'react-alice-carousel';
 import { Rating } from 'react-simple-star-rating'
 
 
 const TwoRowCarousel = () => {
     const settings = {
-        className: "center",
-        centerMode: false,
+
+
         infinite: true,
         centerPadding: "60px",
-        slidesToShow: 2,
+
         speed: 1000,
         rows: 2,
         autoplay: true,
-        slidesPerRow: 2,
+
         dots: true,
+        slidesToShow: 4,
+        slideToScroll: 4
     };
     const data = twoRowCarousel.map(element => {
-        return (
-            <div className="border m-2">
-                <div>
-                    <img src={element.image} className="rounded" alt="" style={{ width: "10rem", heigth: "10rem" }} />
-                    <div>
-                        {element.icon}
-                    </div>
-                </div>
-                <div>
-                    <p>
-                        {element.name}
-                    </p>
-                </div>
-                <div className="d-flex">
-                    <div>
-                        ${element.price}
-                        <div>
-                            <Rating/>
-<<<<<<< HEAD
-                            <Rating/>
-=======
->>>>>>> 3895739014cac85379a2f10cfaff2ab70b83767c
-                        </div>
+        const children = element.children.map(element => {
 
-                    </div>
-                    <div>
-                        {element.icon2}
+            return (
+                <div className="d-flex w-25 p-4">
+                    <div className=" border m-2">
+                        <div>
+                            <img src={element.image} className="rounded" alt="" style={{ width: "10rem", heigth: "10rem" }} />
+                            <div>
+                                {element.icon}
+                            </div>
+                        </div>
+                        <div>
+                            <p>
+                                {element.name}
+                            </p>
+                        </div>
+                        <div className="d-flex">
+                            <div>
+                                ${element.price}
+                                <div>
+                                    <Rating />
+                                </div>
+    
+                            </div>
+                            <div>
+                                {element.icon2}
+                            </div>
+                        </div>
                     </div>
                 </div>
+            );
+        })
+        return(
+            <div className="d-flex flex-wrap">
+                {children}
             </div>
-        );
+        )
+       
     })
     return (
         <div>
-            <Slider {...settings}>
+            <AliceCarousel>
                 {data}
-            </Slider>
+            </AliceCarousel>
         </div>
     )
 }
