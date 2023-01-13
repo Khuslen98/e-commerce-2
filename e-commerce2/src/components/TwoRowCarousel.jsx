@@ -1,14 +1,33 @@
 import twoRowCarousel from "../data/twoRowCarousel";
-import React from "react";
+import React, { useState } from "react";
 // import Slider from "react-slick"
 import AliceCarousel from 'react-alice-carousel';
 import { Rating } from 'react-simple-star-rating'
 
 
-const TwoRowCarousel = () => {
+const TwoRowCarousel = (props) => {
+    const [hearted, setHeart] = useState("")
+
+    function handleRegister(id) {
+        console.log(id)
+        props.setWishlist(props.wishlist + 1)
+        const heart = twoRowCarousel.map(element => {
+            const children = element.children.map(element => {
+                console.log(element)
+                if (id === element.id) {
+                    console.log(element.name)
+                    console.log(element.image)
+                    console.log(element.price)
+                }
+            })
+            return (children)
+        })
+        setHeart([])
+        console.log(setHeart)
+    };
+
+
     const settings = {
-
-
         infinite: true,
         centerPadding: "60px",
 
@@ -27,10 +46,11 @@ const TwoRowCarousel = () => {
                 <div className="d-flex w-25 p-4">
                     <div className=" border rounded m-2">
                         <div className="d-flex">
-                            <img src={element.image} className="rounded img-fluid" alt="" style={{ width: "80%"}} />
-                            <div className="m-2 rounded-circle p-2 bg-warning" style={{width: "44px", height:"37px"}}>
+                            <img src={element.image} className="rounded img-fluid" alt="" style={{ width: "80%" }} />
+                            {/* <div className="m-2 rounded-circle p-2 bg-warning" style={{width: "44px", height:"37px"}}> */}
+                            <button onClick={() => handleRegister(element.id)} className="btn rounded-circle bg-warning w-25 h-25">
                                 {element.icon}
-                            </div>
+                            </button>
                         </div>
                         <div className="d-flex align-items-center justify-content-evenly">
                             <div>
