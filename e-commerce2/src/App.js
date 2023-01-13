@@ -16,6 +16,7 @@ import { useState } from 'react';
 
 function App() {
   const [wishlist, setWishlist] = useState(0)
+  const [products, setProducts] = useState([]) 
   return (
     <div className="App">
       <header className="App-header d-flex justify-content-between">
@@ -26,7 +27,7 @@ function App() {
         <nav className='navBar1'>
           <div className='d-flex justify-content-between'>
             <Navbar1 />
-            <Navbar2 wishlist={wishlist}/>
+            <Navbar2 products={products}/>
           </div>
           <div className='navBar2 d-flex justify-content-between'>
             <MainMenu />
@@ -36,7 +37,7 @@ function App() {
         <CarouselData0 />
         <SlideCarousel />
         <TwoRowCarousel0/>
-        <TwoRowCarousel setWishlist={setWishlist} wishlist={wishlist}/>
+        <TwoRowCarousel setWishlist={setWishlist} wishlist={wishlist} products={products} setProducts={setProducts}/>
       </div>
     </div >
   );

@@ -1,5 +1,6 @@
 import navbarData1 from "../data/navBarRow2"
 import { Person, Heart, Cart } from 'react-bootstrap-icons';
+import TwoRowCarousel from "./TwoRowCarousel0";
 
 function Navbar2(props) {
 
@@ -15,13 +16,18 @@ function Navbar2(props) {
     // </div>
     // s
     // })
+    console.log(props)
     return (
         <div className="d-flex mx-5 mt-5">
             <button className="btn rounded-circle">
-                <div className="m-1">
+                <div className=" m-1">
                     <Heart />
                     <div>
-                        {props.wishlist}
+                        {props.products.map((product) => {
+
+                          console.log(product.icon)
+
+                        })}
                     </div>
                 </div>
             </button>

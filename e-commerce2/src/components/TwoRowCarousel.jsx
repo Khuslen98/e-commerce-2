@@ -6,24 +6,25 @@ import { Rating } from 'react-simple-star-rating'
 
 
 const TwoRowCarousel = (props) => {
-    const [hearted, setHeart] = useState("")
-
+   console.log(props)
     function handleRegister(id) {
         console.log(id)
         props.setWishlist(props.wishlist + 1)
         const heart = twoRowCarousel.map(element => {
             const children = element.children.map(element => {
-                console.log(element)
                 if (id === element.id) {
-                    console.log(element.name)
-                    console.log(element.image)
-                    console.log(element.price)
+                    props.setProducts([...props.products, element]);
+                    // console.log("el",element);
+                    // console.log("products", products);
+                    // console.log(element.name)
+                    // console.log(element.image)
+                    // console.log(element.price)
                 }
             })
             return (children)
+            
         })
-        setHeart([])
-        console.log(setHeart)
+        console.log(props.products)
     };
 
 
