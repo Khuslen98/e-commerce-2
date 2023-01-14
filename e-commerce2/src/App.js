@@ -27,7 +27,7 @@ function App() {
         <nav className='navBar1'>
           <div className='d-flex justify-content-between'>
             <Navbar1 />
-            <Navbar2 products={products}/>
+            <Navbar2 products={products} wishlist={wishlist}/>
           </div>
           <div className='navBar2 d-flex justify-content-between'>
             <MainMenu />

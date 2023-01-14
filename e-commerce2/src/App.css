@@ -81,3 +81,12 @@
   background-color: #EDA415;
   border-radius: 50%;
 } */
+.wishlist-main {
+  position: relative;
+  cursor: pointer;
+}
+.wishlist-cat {
+  position: absolute;
+  right: 0;
+  top: 80;
+}
