@@ -36,10 +36,7 @@ const TwoRowCarousel = () => {
                         ${element.price}
                         <div>
                             <Rating/>
-<<<<<<< HEAD
                             <Rating/>
-=======
->>>>>>> 3895739014cac85379a2f10cfaff2ab70b83767c
                         </div>
 
                     </div>
