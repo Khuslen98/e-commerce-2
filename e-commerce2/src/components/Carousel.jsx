@@ -22,7 +22,7 @@ const CarouselData0 = () => {
             </div>
         )
     })
-    console.log(result)
+    // console.log(result)
     return (
         <div>
             <AliceCarousel responsive={responsive} infinite="false" autoPlay autoPlayInterval={3000}>

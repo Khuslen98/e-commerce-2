@@ -1,28 +1,28 @@
-import navbarData1 from "../data/navBarRow2"
+import { useState } from 'react';
 import { Person, Heart, Cart } from 'react-bootstrap-icons';
 
-function Navbar2(props) {
 
-    // const data = navbarData1.map(element => {
-    // return (
-    // <div className="d-flex mx-5 mt-5">
-    //     <div className="m-1">
-    //         {element.Image}
-    //     </div>
-    //     <div className="m-1">
-    //         {element.paragraph}
-    //     </div>
-    // </div>
-    // s
-    // })
+function Navbar2(props) {
+    const [ list, setlist] = useState(false)
+
     return (
         <div className="d-flex mx-5 mt-5">
-            <button className="btn rounded-circle">
-                <div className="m-1">
-                    <Heart />
+            <button className="btn text-white rounded-circle">
+                
+                <div className="m-2 " >
+                    <Heart className='wishlist-main' onClick={() => setlist(true)}/>
+                    {list ? <div className='wishlist-cat'>
+                            <h5>Wishlist</h5>
+                            {props.wishlist}
+                            <button className='close-button' onClick={() => { setlist(false) }}>Close</button>
+                        </div> : ""}
                     <div>
+                        {props.products.map((product) => {
+                        //   console.log(product.icon)
+                        })}
                         {props.wishlist}
                     </div>
+                  
                 </div>
             </button>
             <div className="m-1">
