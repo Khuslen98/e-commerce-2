@@ -11,12 +11,12 @@ const CarouselData0 = () => {
             <div className="sliderimg Carousel01 d-flex justify-content-around carouselMain m-5">
                 <div className="carouselSection1">
                     <h2 className="CarouselDataH2">{data.name}</h2>
-                    <button className="CarouselDataBTN1 btn2 ">{data.button}</button>
-                    <button className="CarouselDataBTN2 btn2 ">{data.button2}</button>
+                    <button className="CarouselDataBTN1 btn2 m-1 mt-4">{data.button}</button>
+                    <button className="CarouselDataBTN2 btn2 m-1 mt-2">{data.button2}</button>
                 </div>
              
                 <div className="carouselSection2">
-                    <img className="CarouselDataIMG" src={data.image} alt="" />
+                    <img className="CarouselDataIMG img-fluid" style={{width: "28rem", height:"20rem"}} src={data.image} alt="" />
                     {/* <p className="CarouselDataPARA">{data.para}</p> */}
                 </div>
             </div>
