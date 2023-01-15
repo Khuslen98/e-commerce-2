@@ -87,6 +87,6 @@
 }
 .wishlist-cat {
   position: absolute;
-  right: 0;
-  top: 80;
+
+  background-color: white;
 }
