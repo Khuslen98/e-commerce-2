@@ -87,6 +87,11 @@
 }
 .wishlist-cat {
   position: absolute;
-
   background-color: white;
+  z-index: 1 ;
 }
+.close-button:hover {
+  background-color: red;
+
+}
+
