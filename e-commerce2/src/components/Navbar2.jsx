@@ -5,32 +5,42 @@ import { Person, Heart, Cart } from 'react-bootstrap-icons';
 function Navbar2(props) {
     const [list, setlist] = useState(false)
 
+    const medkue = props.products.map(el => {
+       console.log('minii el',el);
+       return (
+
+            <div >
+                <div>
+                    <img src={el.image} className="rounded img-fluid" alt="" style={{ width: "80%" }} />
+                </div>
+                <div>
+                    Product name: {el.name}
+                </div>
+                <div>
+                    Product price: {el.price}
+                </div>
+            </div>
+       )
+
+    })
+
+
     return (
         <div className="d-flex mx-5 mt-5">
             <button className="btn text-white rounded-circle">
 
-                <div className="m-2 " >
+                <div className="m-2" >
                     <Heart className='wishlist-main' onClick={() => setlist(true)} />
-                    {list ? <div className='wishlist-cat text-black'>
+                    {
+                    list ? <div className='wishlist-cat rounded bg-info text-black'>
                         <h5>Wishlist</h5>
                         <div>
-                            {props.products.map((element) => {
-                                <div>
-                                    <div>
-                                        <img src={element.image} className="rounded img-fluid" alt="" style={{ width: "80%" }} />
-                                    </div>
-                                    <div>
-                                        {element.name}
-                                    </div>
-                                    <div>
-                                        {element.price}
-                                    </div>
-                                </div>
-                            })}
+                            {medkue}
                         </div>
                         <div>{props.wishlist}</div>
-                        <button className='close-button' onClick={() => { setlist(false) }}>Close</button>
-                    </div> : ""}
+                        <button className='close-button btn bg-warning' onClick={() => {console.log("jhsagdj") ;setlist(false) }}>Close</button>
+                    </div> : ""
+                    }
                     <div>
 
                         {props.wishlist}

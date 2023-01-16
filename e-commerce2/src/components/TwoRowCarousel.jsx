@@ -72,7 +72,7 @@ const TwoRowCarousel = (props) => {
                             </div>
                         </div>
                         <div>
-                            <Rating/>
+                            <Rating />
                         </div>
 
                     </div>
