@@ -1,13 +1,16 @@
 import { useState } from 'react';
 import { Person, Heart, Cart } from 'react-bootstrap-icons';
+import { Route, Router, Routes, Link } from 'react-router-dom'
+import Login from './Login';
+import React from 'react';
 
 
 function Navbar2(props) {
     const [list, setlist] = useState(false)
 
     const medkue = props.products.map(el => {
-       console.log('minii el',el);
-       return (
+        console.log('minii el', el);
+        return (
 
             <div >
                 <div>
@@ -20,7 +23,7 @@ function Navbar2(props) {
                     Product price: {el.price}
                 </div>
             </div>
-       )
+        )
 
     })
 
@@ -32,14 +35,14 @@ function Navbar2(props) {
                 <div className="m-2" >
                     <Heart className='wishlist-main' onClick={() => setlist(true)} />
                     {
-                    list ? <div className='wishlist-cat rounded bg-info text-black'>
-                        <h5>Wishlist</h5>
-                        <div>
-                            {medkue}
-                        </div>
-                        <div>{props.wishlist}</div>
-                        <button className='close-button btn bg-warning' onClick={() => {console.log("jhsagdj") ;setlist(false) }}>Close</button>
-                    </div> : ""
+                        list ? <div className='wishlist-cat rounded bg-info text-black'>
+                            <h5>Wishlist</h5>
+                            <div>
+                                {medkue}
+                            </div>
+                            <div>{props.wishlist}</div>
+                            <button className='close-button btn bg-warning' onClick={() => { console.log("jhsagdj"); setlist(false) }}>Close</button>
+                        </div> : ""
                     }
                     <div>
 
@@ -48,12 +51,20 @@ function Navbar2(props) {
 
                 </div>
             </button>
-            <div className="m-1">
-                <Person />
+            <div>
+                {/* <button><Person  /></button> */}
+
+                <Link to={'/login'}><Person  /></Link>
             </div>
             <div className="m-1">
                 <Cart />
             </div>
+            <Router>
+              
+                <Route path='/login' element={<Login />}/>
+                
+            </Router>
+            
 
         </div>
     )
