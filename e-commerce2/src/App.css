@@ -92,6 +92,32 @@
 }
 .close-button:hover {
   background-color: red;
-
 }
+/* ------------------Laptop-png-area---------------- */
 
+.LaptopMain {
+
+  display: flex;
+  justify-content: center;
+}
+.LaptopImg {
+  position: absolute;
+}
+.LaptopSection {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 40rem;
+  margin-top: 6rem ;
+}
+/* -------------------Three Products------------------ */
+.ThreeProd {
+  margin: 0 auto;
+  width: 82rem;
+  
+}
+.ThreeProdSec {
+  margin-top: 30rem;
+  border: black solid 2px;
+}
