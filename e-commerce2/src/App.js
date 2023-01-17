@@ -13,7 +13,8 @@ import TwoRowCarousel from './components/TwoRowCarousel';
 import TwoRowCarousel0 from './components/TwoRowCarousel0';
 import { useState } from 'react';
 import { Routes, Route } from "react-router-dom"
-// import Login from './components/Login';
+import Login from './components/Login';
+// import Detail from './Detail';
 
 
 function App() {
@@ -41,9 +42,10 @@ function App() {
         <TwoRowCarousel0/>
         <TwoRowCarousel setWishlist={setWishlist} wishlist={wishlist} products={products} setProducts={setProducts}/>
       </div>
-      {/* <Routes>
-        <Route path='/login' element={<Login/>}></Route>
-      </Routes> */}
+      <Routes>
+        <Route path={'/login'} element={<Login/>}></Route>
+        {/* <Route path={'/detail'} element={<Detail/>}></Route> */}
+      </Routes>
     </div >
   );
 }

@@ -52,20 +52,15 @@ function Navbar2(props) {
                 </div>
             </button>
             <div>
-                {/* <button><Person  /></button> */}
+             
+                
 
-                <Link to={'/login'}><Person  /></Link>
+                <Link to={"/login"}><Person  /></Link>
+                
             </div>
             <div className="m-1">
                 <Cart />
             </div>
-            <Router>
-              
-                <Route path='/login' element={<Login />}/>
-                
-            </Router>
-            
-
         </div>
     )
 
