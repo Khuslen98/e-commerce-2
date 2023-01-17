@@ -14,6 +14,8 @@ import TwoRowCarousel0 from './components/TwoRowCarousel0';
 import { useState } from 'react';
 import { Routes, Route } from "react-router-dom"
 import Login from './components/Login';
+import Laptop from './components/Laptop';
+import ThreeProduct from './components/ThreeProduct';
 // import Detail from './Detail';
 
 
@@ -41,6 +43,8 @@ function App() {
         <SlideCarousel />
         <TwoRowCarousel0/>
         <TwoRowCarousel setWishlist={setWishlist} wishlist={wishlist} products={products} setProducts={setProducts}/>
+        <Laptop />
+        <ThreeProduct />
       </div>
       <Routes>
         <Route path={'/login'} element={<Login/>}></Route>
