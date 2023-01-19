@@ -29,7 +29,7 @@ function Navbar2(props) {
 
 
     return (
-        <div className="d-flex mx-5 mt-5">
+        <div className="d-flex">
             <button className="btn text-white rounded-circle">
 
                 <div className="m-2" >
@@ -51,16 +51,12 @@ function Navbar2(props) {
 
                 </div>
             </button>
-            <div>
-             
-                
-
-                <Link to={"/login"}><Person  /></Link>
-                
-            </div>
-            <div className="m-1">
+            <button className='btn text-white'>
+                <Link to={"/login"}><Person  /> Sign In</Link>
+            </button>
+            <button className="btn text-white">
                 <Cart />
-            </div>
+            </button>
         </div>
     )
 

@@ -6,9 +6,9 @@ import { Rating } from 'react-simple-star-rating'
 
 
 const TwoRowCarousel = (props) => {
-   console.log(props)
+    console.log("helejbui", props)
     function handleRegister(id) {
-        console.log(id)
+        console.log("hiij bui", id)
         props.setWishlist(props.wishlist + 1)
         const heart = twoRowCarousel.map(element => {
             const children = element.children.map(element => {
@@ -23,9 +23,20 @@ const TwoRowCarousel = (props) => {
             })
             return (children)
             
+            
+
         })
         console.log(props.products)
     };
+    function inWish(element) {
+        console.log("inwish", element)
+        let data = false
+        element.children.map((a) => {
+            if (a.id == element)
+            return true
+        })
+    }
+    
 
 
     const settings = {
@@ -49,7 +60,7 @@ const TwoRowCarousel = (props) => {
                         <div className="d-flex">
                             <img src={element.image} className="rounded img-fluid" alt="" style={{ width: "80%" }} />
                             {/* <div className="m-2 rounded-circle p-2 bg-warning" style={{width: "44px", height:"37px"}}> */}
-                            <button onClick={() => handleRegister(element.id)} className="btn rounded-circle bg-warning w-25 h-25">
+                            <button onClick={() => handleRegister(element.id)} style={{ color: "red" }} className="btn bg-warning rounded-circle w-25 h-25">
                                 {element.icon}
                             </button>
                         </div>

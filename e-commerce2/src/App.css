@@ -121,3 +121,35 @@
   margin-top: 30rem;
   border: black solid 2px;
 }
+/* --------------------- Warranty -------------------- */
+.warrantyMain {
+  margin: 5rem 0 5rem 0 ;
+  background-color: 
+  #E2F4FF;
+  border-radius: 20px;
+}
+.warrantySide {
+  margin: 5rem 0 5rem 0 ;
+}
+/* ---------------------Developer----------------- */
+.developerImg {
+  width: 5rem;
+  border: #EDA415 dashed 2px;
+}
+.DeveloperCarousel {
+  border: #7c7c7c 2px solid;
+}
+.developerPara {
+  font-weight: lighter;
+  font-size: x-small;
+}
+.developerParaContainer {
+  background-color: #E2F4FF;
+  border-radius: 20px;
+}
+/* --------------------Footer-------------------- */
+.footerMain {
+  margin-top: 5rem;
+  background-color: #E2F4FF;
+  
+}

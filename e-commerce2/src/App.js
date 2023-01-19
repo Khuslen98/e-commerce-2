@@ -14,16 +14,17 @@ import TwoRowCarousel0 from './components/TwoRowCarousel0';
 import { useState } from 'react';
 import { Routes, Route } from "react-router-dom"
 import Login from './components/Login';
-import Laptop from './components/Laptop';
-import ThreeProduct from './components/ThreeProduct';
+
+import Navbar from './components/NavBar';
+import Home from './components/Home';
+import Footer from './components/Footer';
 // import Detail from './Detail';
 
 
 function App() {
-  const [wishlist, setWishlist] = useState(0)
-  const [products, setProducts] = useState([]) 
+  // const [wishlist, setWishlist] = useState([]);
   return (
-    <div className="App">
+    <div className="App m-5">
       <header className="App-header d-flex justify-content-between">
         <CustomerService />
         <CustomerService1 />
@@ -32,24 +33,23 @@ function App() {
         <nav className='navBar1'>
           <div className='d-flex justify-content-between'>
             <Navbar1 />
-            <Navbar2 products={products} wishlist={wishlist}/>
+            <Navbar2 /*wishlist={wishlist} setWishlist={setWishlist}*//>
+            {/* <Navbar /> */}
           </div>
           <div className='navBar2 d-flex justify-content-between'>
             <MainMenu />
             <h4 className='fundReturn'>30 days return</h4>
           </div>
         </nav>
-        <CarouselData0 />
-        <SlideCarousel />
-        <TwoRowCarousel0/>
-        <TwoRowCarousel setWishlist={setWishlist} wishlist={wishlist} products={products} setProducts={setProducts}/>
-        <Laptop />
-        <ThreeProduct />
+       {/* <Home /> */}
       </div>
+      
       <Routes>
         <Route path={'/login'} element={<Login/>}></Route>
+        <Route path={'/home'} element={<Home /*wishlist={wishlist} setWishlist={setWishlist}*//>} ></Route>
         {/* <Route path={'/detail'} element={<Detail/>}></Route> */}
       </Routes>
+      <Footer />
     </div >
   );
 }
