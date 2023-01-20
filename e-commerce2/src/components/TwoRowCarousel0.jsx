@@ -20,7 +20,8 @@ function TwoRowCarousel() {
     })
     return (
         <div>
-            {data}
+            <div>{data}</div>
+            
         </div>
     )
 }
