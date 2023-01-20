@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Person, Heart, Cart } from 'react-bootstrap-icons';
-import { Route, Router, Routes, Link } from 'react-router-dom'
-import Login from './Login';
+import { Link } from 'react-router-dom'
 import React from 'react';
 
 

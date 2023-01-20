@@ -3,54 +3,47 @@ import React, { useState } from "react";
 // import Slider from "react-slick"
 import AliceCarousel from 'react-alice-carousel';
 import { Rating } from 'react-simple-star-rating'
+import { SuitHeart, SuitHeartFill } from 'react-bootstrap-icons';
+import { useParams } from "react-router-dom";
 
 
 const TwoRowCarousel = (props) => {
-    console.log("helejbui", props)
-    function handleRegister(id) {
-        console.log("hiij bui", id)
-        props.setWishlist(props.wishlist + 1)
-        const heart = twoRowCarousel.map(element => {
-            const children = element.children.map(element => {
-                if (id === element.id) {
-                    props.setProducts([...props.products, element]);
-                    // console.log("el",element);
-                    // console.log("products", products);
-                    // console.log(element.name)
-                    // console.log(element.image)
-                    // console.log(element.price)
-                }
-            })
-            return (children)
-            
-            
+    const [list, setlist] = useState(false);
+    const [liked, setLiked] = useState(false);
+    const { id } = useParams();
 
-        })
-        console.log(props.products)
-    };
-    function inWish(element) {
-        console.log("inwish", element)
-        let data = false
-        element.children.map((a) => {
-            if (a.id == element)
-            return true
-        })
+    let foundProduct = {};
+    if(id) {
+        foundProduct = twoRowCarousel.filter((product) => {
+            if(product.id == id) {
+                return product
+            }
+        })[0];
     }
-    
+    if (Object.keys(props).length > 0) {
+        foundProduct = props.product;
+    }
+    const product = foundProduct;
 
 
-    const settings = {
-        infinite: true,
-        centerPadding: "60px",
+    // console.log("helejbui", props)
+    // function handleRegister(id) {
+    //     console.log("hiij bui", id)
+    //     props.setWishlist(props.wishlist + 1)
+    //     const heart = twoRowCarousel.map(element => {
+    //         const children = element.children.map(element => {
+    //             if (id === element.id) {
+    //                 props.setProducts([...props.products, element]);
+             
+    //             }
+    //         })
+    //         return (children)
+            
+            
 
-        speed: 1000,
-        rows: 2,
-        autoplay: true,
-
-        dots: true,
-        slidesToShow: 4,
-        slideToScroll: 4
-    };
+    //     })
+    //     console.log(props.products)
+    // };
     const data = twoRowCarousel.map(element => {
         const children = element.children.map(element => {
 
@@ -60,9 +53,11 @@ const TwoRowCarousel = (props) => {
                         <div className="d-flex">
                             <img src={element.image} className="rounded img-fluid" alt="" style={{ width: "80%" }} />
                             {/* <div className="m-2 rounded-circle p-2 bg-warning" style={{width: "44px", height:"37px"}}> */}
-                            <button onClick={() => handleRegister(element.id)} style={{ color: "red" }} className="btn bg-warning rounded-circle w-25 h-25">
-                                {element.icon}
-                            </button>
+                            <a onClick={() => { 
+                                console.log("zurh daragdla")
+                            }}>
+                                {SuitHeart}
+                            </a>
                         </div>
                         <div className="d-flex align-items-center justify-content-evenly">
                             <div>
@@ -95,6 +90,18 @@ const TwoRowCarousel = (props) => {
                 {children}
             </div>
         )
+        const settings = {
+            infinite: true,
+            centerPadding: "60px",
+    
+            speed: 1000,
+            rows: 2,
+            autoplay: true,
+    
+            dots: true,
+            slidesToShow: 4,
+            slideToScroll: 4
+        };
 
     })
     return (

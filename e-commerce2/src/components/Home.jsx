@@ -15,7 +15,7 @@ export default function Home(props) {
             <CarouselData0 />
             <SlideCarousel />
             <TwoRowCarousel0 />
-            <TwoRowCarousel /*setWishlist={setWishlist} wishlist={wishlist} products={products} setProducts={setProducts}*/ />
+            {/* <TwoRowCarousel /*setWishlist={setWishlist} wishlist={wishlist} products={products} setProducts={setProducts}*/ /> */}
             <Laptop />
             <ThreeProduct />
             <Warranty/>

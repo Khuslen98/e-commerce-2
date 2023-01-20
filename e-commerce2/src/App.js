@@ -18,11 +18,10 @@ import Login from './components/Login';
 import Navbar from './components/NavBar';
 import Home from './components/Home';
 import Footer from './components/Footer';
-// import Detail from './Detail';
 
 
 function App() {
-  // const [wishlist, setWishlist] = useState([]);
+  const [wishlist, setWishlist] = useState([]);
   return (
     <div className="App m-5">
       <header className="App-header d-flex justify-content-between">
@@ -33,7 +32,7 @@ function App() {
         <nav className='navBar1'>
           <div className='d-flex justify-content-between'>
             <Navbar1 />
-            <Navbar2 /*wishlist={wishlist} setWishlist={setWishlist}*//>
+            {/* <Navbar2 wishlist={wishlist} setWishlist={setWishlist}/> */}
             {/* <Navbar /> */}
           </div>
           <div className='navBar2 d-flex justify-content-between'>
