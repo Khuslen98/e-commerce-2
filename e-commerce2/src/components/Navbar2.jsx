@@ -26,7 +26,6 @@ function Navbar2(props) {
   });
 
   return (
-<<<<<<< HEAD
     <div className="d-flex">
       <button className="btn text-white rounded-circle">
         <div className="m-2">
