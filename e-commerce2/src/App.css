@@ -63,35 +63,20 @@
   border: #3A3A3A solid 2px;
   border-radius: 10px;
 }
-/* .SlideCarousel01 {
-  flex-direction: column;
-  justify-content: center;
+/* --------------------wishlist area----------------------- */
+.wishlist-cat{
+  position:absolute;
+  width: 20rem;
+  background-color: rgb(255, 245, 234);
+  text-align: center;
+  z-index: 1;
 }
-.TwoRowHead {
-  display: flex;
-  justify-content: space-between;
-} */
-/* .Carousel01 {
-
-} */
-/* .CarouselDataPARA {
-  position: absolute;
-  margin-bottom: 50px;
-  border: #EDA415 solid 20px;
-  background-color: #EDA415;
-  border-radius: 50%;
-} */
-.wishlist-main {
-  position: relative;
-  cursor: pointer;
+.heart {
+  font-size: xx-large;
 }
-.wishlist-cat {
-  position: absolute;
-  background-color: white;
-  z-index: 1 ;
-}
-.close-button:hover {
-  background-color: red;
+.baraanii-sav {
+  font-size: medium;
+ 
 }
 /* ------------------Laptop-png-area---------------- */
 
@@ -150,6 +135,11 @@
 /* --------------------Footer-------------------- */
 .footerMain {
   margin-top: 5rem;
-  background-color: #E2F4FF;
-  
+  background-color: #E2F4FF; 
+}
+.navbar {
+  height: 100px;
+}
+.persona {
+  font-size: x-large;
 }

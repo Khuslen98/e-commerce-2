@@ -1,4 +1,4 @@
-import { Outlet } from "react-bootstrap-icons"
+
 import { Link } from 'react-router-dom'
 export default function Login() {
     return (
@@ -27,7 +27,7 @@ export default function Login() {
                 </Link>
 
             </form>
-            <Outlet />
+  
         </div>
     )
 }

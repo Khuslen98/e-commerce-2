@@ -1,5 +1,4 @@
 import twoRowCarousel0 from "../data/twoRowCarousel0";
-import { heart, cart4 } from "react-bootstrap";
 
 function TwoRowCarousel() {
 
