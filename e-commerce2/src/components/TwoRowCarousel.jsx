@@ -4,9 +4,10 @@ import { Rating } from "react-simple-star-rating";
 import { SuitHeart, SuitHeartFill } from "react-bootstrap-icons";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+import { isLabelWithInternallyDisabledControl } from "@testing-library/user-event/dist/utils";
 
 const TwoRowCarousel = (props) => {
-  const [liked, setLiked] = useState(false);
+  // const [liked, setLiked] = useState(false);
   const settings = {
     infinite: true,
     centerPadding: "60px",
@@ -22,21 +23,28 @@ const TwoRowCarousel = (props) => {
   const responsive = {
     0: { items: 1, itemFit: "contain" },
   };
+
+
   const { id } = useParams();
+  console.log(id)
 
   let foundProduct = {};
-  console.log("jaja", id);
+
 
   if (id) {
     foundProduct = twoRowCarousel.filter((product) => {
-      const children = product.children.filter((product) => {
+      
+        
         if (product.id !== id) {
           return product;
         }
-      });
+ 
     })[0];
   }
   const product = foundProduct;
+  console.log("hhhj",product)
+  const liked = props.wishlist.filter(wish => wish.id === product.id)[0];
+  console.log(liked)
 
   const data = twoRowCarousel.map((element) => {
     const children = element.children.map((el) => {
@@ -53,12 +61,15 @@ const TwoRowCarousel = (props) => {
               <a
                 onClick={() => {
                   console.log("zurh daragdla");
-                  setLiked(!liked);
+                  // setLiked(!liked);
                   if (!liked) {
                     const likedProduct = {
                       id: el.id,
+                      image: el.image,
                       name: el.name,
+                      price: el.price,
                       liked: true,
+                      // product gej ugsun baisan ba el gej uguh ystoi baijee uchir nn childrem dotroo el gesen utgaar hevlej baigaa ym.
                     };
                     console.log("haha", likedProduct);
                     props.setWishlist([...props.wishlist, likedProduct]);

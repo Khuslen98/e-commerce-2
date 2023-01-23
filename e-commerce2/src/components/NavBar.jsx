@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import { Person, SuitHeart, Cart } from "react-bootstrap-icons";
+import { Person, SuitHeart, Cart, XCircle, X } from "react-bootstrap-icons";
 import { useState } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
@@ -15,11 +15,23 @@ export default function Navbar(props) {
             src={q.image}
             className="rounded img-fluid"
             alt=""
-            style={{ width: "80%" }}
+            style={{ width: "60%" }}
           />
         </div>
-        <div>Product name: {q.name}</div>
-        <div>Product price: {q.price}</div>
+
+        <div>{q.name}</div>
+        <div>{q.price}</div>
+        <a
+          onClick={() => {
+            props.setWishlist(
+              props.wishlist.filter(wish => wish.id !== q.id)
+            );
+            console.log("remove wishlist");
+            console.log(q.id)
+          }}
+        >
+          <XCircle />
+        </a>
       </div>
     );
   });
@@ -70,9 +82,10 @@ export default function Navbar(props) {
                 {list ? (
                   <div className="wishlist-cat text-black">
                     {list ? (
-                      <div className="wishlist-cat rounded text-black">
+                      <div className="d-flex wishlist-cat rounded text-black">
                         <h5>Wishlist</h5>
                         <div>{baraa}</div>
+
                         <button
                           className="close-button  btn bg-warning"
                           onClick={() => {
