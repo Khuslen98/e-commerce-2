@@ -22,18 +22,15 @@ const TwoRowCarousel = (props) => {
   const responsive = {
     0: { items: 1, itemFit: "contain" },
   };
-  const { id } = useParams()
+  const { id } = useParams();
 
   let foundProduct = {};
-  console.log("jaja",id)
-
-
-
+  console.log("jaja", id);
 
   if (id) {
     foundProduct = twoRowCarousel.filter((product) => {
       const children = product.children.filter((product) => {
-        if (product.id == id) {
+        if (product.id !== id) {
           return product;
         }
       });
@@ -42,13 +39,13 @@ const TwoRowCarousel = (props) => {
   const product = foundProduct;
 
   const data = twoRowCarousel.map((element) => {
-    const children = element.children.map((element) => {
+    const children = element.children.map((el) => {
       return (
         <div className="d-flex w-25 p-4">
           <div className=" border rounded m-2">
             <div className="d-flex heart">
               <img
-                src={element.image}
+                src={el.image}
                 className="rounded img-fluid"
                 alt=""
                 style={{ width: "80%" }}
@@ -57,20 +54,19 @@ const TwoRowCarousel = (props) => {
                 onClick={() => {
                   console.log("zurh daragdla");
                   setLiked(!liked);
-                  if(!liked){
+                  if (!liked) {
                     const likedProduct = {
-                        id: product.id,
-                        name: product.name,
-                        liked: true,
-                      };
-                      console.log("haha", likedProduct)
-                      props.setWishlist([...props.wishlist, likedProduct]);
+                      id: el.id,
+                      name: el.name,
+                      liked: true,
+                    };
+                    console.log("haha", likedProduct);
+                    props.setWishlist([...props.wishlist, likedProduct]);
                   } else {
                     props.setWishlist(
-                        props.wishlist.filter(w => w.id === product.id)
+                      props.wishlist.filter((w) => w.id === product.id)
                     );
                   }
-                  
                 }}
               >
                 {liked ? <SuitHeartFill /> : <SuitHeart />}
@@ -80,11 +76,11 @@ const TwoRowCarousel = (props) => {
               <div>
                 <div className="m-1">
                   <p style={{ color: "#003F62", fontWeight: "bolder" }}>
-                    {element.name}
+                    {el.name}
                   </p>
                 </div>
                 <div className="d-flex m-1">
-                  <div>${element.price}</div>
+                  <div>${el.price}</div>
                 </div>
               </div>
               <div style={{ margin: "0 10px 10px 0" }}>{element.icon2}</div>
