@@ -6,9 +6,8 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 
 export default function Navbar(props) {
   const [list, setlist] = useState(false);
-  console.log(props.wishlist)
+  console.log("my wish", props.wishlist);
   const baraa = props.wishlist.map((q) => {
-    
     return (
       <div className="baraanii-sav">
         <div>

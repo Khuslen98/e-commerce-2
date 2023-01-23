@@ -1,7 +1,7 @@
 import "./App.css";
 import "./components/CustomerService";
 import CustomerService from "./components/CustomerService";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/NavBar";
 import MainMenu from "./components/MainMenu";
 import CustomerService1 from "./components/CustomerService1";
 import { Routes, Route } from "react-router-dom";
@@ -11,7 +11,7 @@ import Footer from "./components/Footer";
 import { useState } from "react";
 
 function App() {
-  const [wishlist, setWishlist] = useState([])
+  const [wishlist, setWishlist] = useState([]);
   return (
     <div className="App m-5">
       <header className="App-header d-flex justify-content-between">
@@ -21,7 +21,7 @@ function App() {
       <div>
         <nav className="navBar1">
           <div className="d-flex justify-content-between">
-            <Navbar wishlist={wishlist} setWishlist={setWishlist}/>
+            <Navbar wishlist={wishlist} setWishlist={setWishlist} />
           </div>
           <div className="navBar2 d-flex justify-content-between">
             <MainMenu />
@@ -31,7 +31,10 @@ function App() {
       </div>
       <Routes>
         <Route path={"/login"} element={<Login />}></Route>
-        <Route path={"/home"} element={<Home wishlist={wishlist} setWishlist={setWishlist} />}></Route>
+        <Route
+          path={"/home"}
+          element={<Home wishlist={wishlist} setWishlist={setWishlist} />}
+        ></Route>
       </Routes>
       <Footer />
     </div>
