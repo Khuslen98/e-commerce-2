@@ -1,5 +1,5 @@
 import twoRowCarousel from "../data/twoRowCarousel";
-// import AliceCarousel from "react-alice-carousel";
+import AliceCarousel from "react-alice-carousel";
 import Slider from "react-slick";
 import { Rating } from "react-simple-star-rating";
 import { SuitHeart, SuitHeartFill } from "react-bootstrap-icons";
@@ -11,9 +11,9 @@ const TwoRowCarousel = (props) => {
     centerMode: false,
     infinite: true,
     centerPadding: "60px",
-    slidesToShow: 2,
+    slidesToShow: 4,
     speed: 1000,
-    rows: 2,
+    // rows: 2,
     autoplay: true,
     slidesPerRow: 2,
     dots: true,
@@ -49,6 +49,7 @@ const TwoRowCarousel = (props) => {
                   };
                   console.log("haha", likedProduct);
                   props.setWishlist([...props.wishlist, likedProduct]);
+                  props.setCart([...props.setCart, likedProduct])
                   // like daragdsan baraag props wishlistruu nemeed ug gesen ug
                 } else {
                   props.setWishlist(

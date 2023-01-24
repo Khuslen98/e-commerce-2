@@ -9,9 +9,11 @@ import Login from "./components/Login";
 import Home from "./components/Home";
 import Footer from "./components/Footer";
 import { useState } from "react";
+import Cart from "./components/Cart";
 
 function App() {
   const [wishlist, setWishlist] = useState([]);
+  const [cart, setCart] = useState([])
   return (
     <div className="App m-5">
       <header className="App-header d-flex justify-content-between">
@@ -33,8 +35,9 @@ function App() {
         <Route path={"/login"} element={<Login />}></Route>
         <Route
           path={"/home"}
-          element={<Home wishlist={wishlist} setWishlist={setWishlist} />}
+          element={<Home wishlist={wishlist} setWishlist={setWishlist} cart={cart} setCart={setCart} />}
         ></Route>
+        <Route path={"/cart"} element={<Cart cart={cart} setCart={setCart} />}></Route>
       </Routes>
       <Footer />
     </div>
