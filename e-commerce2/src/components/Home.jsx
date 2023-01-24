@@ -20,7 +20,6 @@ export default function Home(props) {
             <Warranty/>
             <Developer />
             <Outlet />
-            
         </div>
     )
 }
