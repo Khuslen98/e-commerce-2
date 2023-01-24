@@ -105,7 +105,10 @@ export default function Navbar(props) {
               </div>
             </div>
             <div className="mx-2">
+              <Link to="/cart">
               <Cart />
+              </Link>
+              
             </div>
           </div>
         </div>
