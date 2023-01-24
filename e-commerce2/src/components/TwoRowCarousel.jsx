@@ -2,10 +2,14 @@ import twoRowCarousel from "../data/twoRowCarousel";
 import AliceCarousel from "react-alice-carousel";
 import Slider from "react-slick";
 import { Rating } from "react-simple-star-rating";
-import { SuitHeart, SuitHeartFill } from "react-bootstrap-icons";
+import {
+  SuitHeart,
+  SuitHeartFill,
+  Cart,
+  CartCheckFill,
+} from "react-bootstrap-icons";
 
 const TwoRowCarousel = (props) => {
-
   const settings = {
     className: "center",
     centerMode: false,
@@ -19,11 +23,11 @@ const TwoRowCarousel = (props) => {
     dots: true,
   };
 
-  
-
   const data = twoRowCarousel.map((element, index) => {
     const liked = props.wishlist.filter((wish) => wish.id === element.id)[0];
-  console.log(liked);
+    console.log(liked)
+    const sav = props.cart.filter((sav) => sav.id === element.id[0]);
+    console.log(sav);
     return (
       <div key={index} className="d-flex w-25 p-4">
         <div className=" border rounded m-2">
@@ -49,7 +53,7 @@ const TwoRowCarousel = (props) => {
                   };
                   console.log("haha", likedProduct);
                   props.setWishlist([...props.wishlist, likedProduct]);
-                  props.setCart([...props.setCart, likedProduct])
+                  
                   // like daragdsan baraag props wishlistruu nemeed ug gesen ug
                 } else {
                   props.setWishlist(
@@ -72,7 +76,31 @@ const TwoRowCarousel = (props) => {
                 <div>${element.price}</div>
               </div>
             </div>
-            <div style={{ margin: "0 10px 10px 0" }}>{element.icon2}</div>
+            <a
+              style={{ margin: "0 10px 10px 0" }}
+              onClick={() => {
+                console.log("sav daragdla");
+                if(!sav) {
+                  const cartedProduct = {
+                    id: element.id,
+                    image: element.image,
+                    name: element.name,
+                    price: element.price,
+                    liked: true,
+
+                };
+                props.setCart([...props.setCart, cartedProduct])
+              } else {
+                props.setCart(
+                  props.cart.filter((l) => l.id === element.id)
+
+                )
+                
+
+              }}}
+            >
+              {sav ? <Cart /> : <CartCheckFill />}
+            </a>
           </div>
           <div>
             <Rating />
@@ -83,7 +111,7 @@ const TwoRowCarousel = (props) => {
   });
   return (
     <div>
-      <Slider {...settings} >{data}</Slider>
+      <Slider {...settings}>{data}</Slider>
     </div>
   );
 };
