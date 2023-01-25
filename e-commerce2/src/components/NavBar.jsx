@@ -83,7 +83,6 @@ export default function Navbar(props) {
                   <div className="wishlist-cat text-black">
                     {list ? (
                       <div className="d-flex wishlist-cat rounded text-black">
-                        <h5>Wishlist</h5>
                         <div>{baraa}</div>
 
                         <button
